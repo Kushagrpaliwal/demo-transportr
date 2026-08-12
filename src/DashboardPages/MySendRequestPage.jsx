@@ -6,8 +6,8 @@ import {
   packageFeeStatusService,
   SendRequestsService,
   deleteSendPackageService,
-} from "../api/services/sendrequestsService/sendrequests";
-import PaymentModal from "../components/dashboard/PaymentModal";
+} from "../api/services/SendRequestsService/SendRequests";
+import PaymentModal from "../components/Dashboard/PaymentModal";
 import { parseInsuranceFeeConfig } from "../utils/insuranceCost";
 import API from "../api";
 import ConfirmationModal from "../components/Common/ConfirmationModal";

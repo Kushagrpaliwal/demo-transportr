@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import API from "../../api";
-import { PackageQuoteService } from "../../api/services/sendrequestsService/sendrequests";
+import { PackageQuoteService } from "../../api/services/SendRequestsService/SendRequests";
 import { calcInsuranceFee } from "../../utils/insuranceCost";
 
 const formatAmount = (value) => {

@@ -7,7 +7,7 @@ import {
   searchUsersService,
   editSendPackageService,
   getSingleSendRequestsService,
-} from "../api/services/sendrequestsService/sendrequests";
+} from "../api/services/SendRequestsService/SendRequests";
 import {
   parseInsuranceFeeConfig,
   calcInsuranceFee,
