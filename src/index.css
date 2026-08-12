@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=PT+Sans:wght@400;700&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+  .customCircleCheckbox::before {
+    content: "✔";
+    font-size: 12px;
+    color: white;
+    display: none;
+  }
+
+  .customCircleCheckbox:checked::before {
+    display: block;
+  }
+
+  .customCheckbox::before {
+    content: "✔";
+    font-size: 14px;
+    color: white;
+    display: none;
+  }
+
+  .customCheckbox:checked::before {
+    display: block;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    background-image: url("../public/date-picker.svg");
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+
+  select.custom-select option {
+    padding: 8px 12px;
+    transition: background-color 0.2s ease;
+    cursor: pointer !important;
+  }
+
+  select.custom-select option:hover {
+    background-color: #4681f4 !important;
+    color: white;
+    cursor: pointer !important;
+  }
+
+  select.custom-select option:checked {
+    background-color: #4681f4 !important;
+    color: white;
+  }
+
+  select.custom-select {
+    border: none !important;
+    outline: none !important;
+    padding: 10px;
+  }
+
+  select.custom-select:focus {
+    box-shadow: none !important;
+  }
+}
+
+@layer base {
+  body {
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+    color: var(--text-light);
+    background-color: white;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+  }
+
+  button,
+  p {
+    font-family: "PT Sans", Arial, Helvetica, sans-serif !important;
+  }
+
+  .containersec {
+    padding: 0 60px;
+    max-width: 1420px;
+    margin: 0 auto;
+  }
+
+  .customCircleCheckbox {
+    @apply w-6 h-6 cursor-pointer appearance-none border border-[#D6D6D6] rounded-full bg-white checked:bg-[#4681F4] focus:ring-[#4681F4] checked:border-transparent flex items-center justify-center;
+  }
+
+  .customCheckbox {
+    @apply w-6 h-6 cursor-pointer appearance-none border-[1.2px] border-[#D6D6D6] rounded-[5px] bg-white checked:bg-[#4681F4] focus:ring-[#4681F4] checked:border-transparent flex items-center justify-center;
+  }
+
+  .customInputCSS {
+    @apply w-full my-2 bg-[#E6F0FF] rounded-[10px] px-4 py-4 text-[#666666] text-base outline-none focus:ring-2 focus:ring-[#4681F4] placeholder:italic;
+  }
+
+  /* Hide browser-provided password reveal icon to avoid duplicate eye toggles */
+  .no-password-reveal::-ms-reveal,
+  .no-password-reveal::-ms-clear {
+    display: none;
+  }
+
+  @media (max-width: 960px) {
+    .containersec {
+      padding: 0 30px;
+    }
+  }
+}
