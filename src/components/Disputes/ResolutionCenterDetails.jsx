@@ -15,7 +15,7 @@ import {
   getInsuranceDetailsService,
   downloadEvidenceService,
 } from "../../api/services/DisputeService/disputeService";
-import { socket } from "../../api/services/SocketIoService/socket";
+import { socket } from "../../api/services/SocketIoService/Socket";
 import { useProfile } from "../../context/ProfileContext";
 import ConfirmationModal from "../Common/ConfirmationModal";
 import DisputeChat from "./DisputeChat";

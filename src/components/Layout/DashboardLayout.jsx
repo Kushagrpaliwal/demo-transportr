@@ -26,7 +26,7 @@ import { useProfile } from "../../context/ProfileContext";
 import { getProFeaturesService } from "../../api/services/proFeaturesService/proFeatures";
 import { PlanStatusService } from "../../api/services/SubscriptionsService/plans";
 import Footer from "../Common/Footer";
-import { socket } from "../../api/services/SocketIoService/socket";
+import { socket } from "../../api/services/SocketIoService/Socket";
 import { shipmentsActiveService } from "../../api/services/DashboardService/ActiveShipments";
 import { PackagesInTransitService } from "../../api/services/TrackPackageService/TrackPackage";
 import { notificationsService } from "../../api/services/NotificationsService/Notifications";

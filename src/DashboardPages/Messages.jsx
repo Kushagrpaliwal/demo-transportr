@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getListOfConversations } from "../api/services/MessageService/MessageService";
-import getShortName from "../Utils/GetShortName";
-import formatDate from "../Utils/formatDate";
+import getShortName from "../utils/GetShortName";
+import formatDate from "../utils/formatDate";
 import { useProfile } from "../context/ProfileContext";
-import { socket } from "../api/services/SocketIoService/socket";
+import { socket } from "../api/services/SocketIoService/Socket";
 
 const Messages = () => {
   const navigate = useNavigate();

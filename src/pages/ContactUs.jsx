@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { commonCmsService } from "../api/services/CMSService/CmsService";
 import { usePopup } from "../context/PopupContext";
-import { createEnquiryService } from "../api/services/CmsService/enquiry";
+import { createEnquiryService } from "../api/services/CMSService/enquiry";
 
 const ContactUs = () => {
   const navigate = useNavigate();

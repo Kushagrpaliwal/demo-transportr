@@ -6,8 +6,8 @@ import {
   getConversationById,
   postMessage,
 } from "../api/services/MessageService/MessageService";
-import getShortName from "../Utils/GetShortName";
-import { socket } from "../api/services/SocketIoService/socket";
+import getShortName from "../utils/GetShortName";
+import { socket } from "../api/services/SocketIoService/Socket";
 
 const ChatInterface = () => {
   const EMOJIS = ["😀", "😂", "😍", "😎", "😊", "👍", "🙏", "🎉", "❤️", "🔥"];

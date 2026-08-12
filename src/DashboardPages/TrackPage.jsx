@@ -5,7 +5,7 @@ import TrackingHistory from "../components/Track/TrackingHistory";
 import { useParams, useNavigate } from "react-router-dom";
 import { ShipmentsTrackService } from "../api/services/TrackPackageService/TrackPackage";
 import { useEffect, useState } from "react";
-import { socket } from "../api/services/SocketIoService/socket";
+import { socket } from "../api/services/SocketIoService/Socket";
 import { useProfile } from "../context/ProfileContext";
 import OpenDisputeModal from "../components/Disputes/OpenDisputeModal";
 import CreateFormalCaseModal from "../components/Disputes/CreateFormalCaseModal";

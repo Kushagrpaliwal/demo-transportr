@@ -7,7 +7,7 @@ import {
   SubscriptionDowngradeService,
   SubscriptionSwitchPlanService,
 } from "../api/services/SubscriptionsService/plans";
-import SubscriptionPaymentModal from "../components/Dashboard/SubscriptionPaymentModal";
+import SubscriptionPaymentModal from "../components/dashboard/SubscriptionPaymentModal";
 import VerificationModal from "../components/Dashboard/VerificationModal";
 import { usePopup } from "../context/PopupContext";
 
@@ -147,7 +147,9 @@ const SubscriptionPage = () => {
 
   const getUpcomingPlanTitle = (price) => {
     if (!price) return null;
-    return price?.interval?.count == 1 ? Allplans?.find((plan) => plan.billingPeriod === "monthly")?.title : Allplans?.find((plan) => plan.billingPeriod === "yearly")?.title;
+    return price?.interval?.count == 1
+      ? Allplans?.find((plan) => plan.billingPeriod === "monthly")?.title
+      : Allplans?.find((plan) => plan.billingPeriod === "yearly")?.title;
   };
 
   const isActiveSubscription =
@@ -163,7 +165,9 @@ const SubscriptionPage = () => {
   const upcomingPlanStartsFrom = upcomingBillingTimestamp
     ? formatUnixDate(upcomingBillingTimestamp)
     : null;
-  const upcomingPlanAmount = getRyftPriceInMajorUnits(parsedRyftResponse?.price);
+  const upcomingPlanAmount = getRyftPriceInMajorUnits(
+    parsedRyftResponse?.price,
+  );
   const upcomingPlanCurrency =
     parsedRyftResponse?.price?.currency || planStatus?.currency || "GBP";
   const currentPlanName = (currentPlan?.title || "").toLowerCase().trim();

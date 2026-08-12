@@ -7,7 +7,7 @@ import {
   SendRequestsService,
   deleteSendPackageService,
 } from "../api/services/sendrequestsService/sendrequests";
-import PaymentModal from "../components/Dashboard/PaymentModal";
+import PaymentModal from "../components/dashboard/PaymentModal";
 import { parseInsuranceFeeConfig } from "../utils/insuranceCost";
 import API from "../api";
 import ConfirmationModal from "../components/Common/ConfirmationModal";
@@ -48,7 +48,11 @@ const MySendRequestPage = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [selectedRequest, setSelectedRequest] = useState(null);
   const [rushFee, setRushFee] = useState(0);
-  const [insuranceFee, setInsuranceFee] = useState({ amount: 0, percentage: 0, hide: true });
+  const [insuranceFee, setInsuranceFee] = useState({
+    amount: 0,
+    percentage: 0,
+    hide: true,
+  });
   const [welcomeCreditFee, setWelcomeCreditFee] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [requestToDelete, setRequestToDelete] = useState(null);
@@ -118,13 +122,13 @@ const MySendRequestPage = () => {
   }, []);
 
   useEffect(() => {
-    if(userProfile?.first_shipment_credit_eligible) {
+    if (userProfile?.first_shipment_credit_eligible) {
       fetchWelcomeCredit();
     }
   }, [userProfile]);
 
   const fetchWelcomeCredit = async () => {
-    if(userProfile?.first_shipment_credit_eligible) {
+    if (userProfile?.first_shipment_credit_eligible) {
       const res3 = await packageFeeStatusService("first_shipment_credit");
       setWelcomeCreditFee(res3?.data?.data || null);
     }
@@ -186,7 +190,10 @@ const MySendRequestPage = () => {
   };
 
   const isWelcomeCreditActive = () => {
-    if (Number(userProfile?.first_shipment_credit_eligible) !== 1 || Number(welcomeCreditFee?.hide) === 1) {
+    if (
+      Number(userProfile?.first_shipment_credit_eligible) !== 1 ||
+      Number(welcomeCreditFee?.hide) === 1
+    ) {
       return false;
     }
     const kycComplete =
@@ -235,7 +242,7 @@ const MySendRequestPage = () => {
   };
 
   const FilteredRequests = sendRequests.filter((req) =>
-    tab === "Awaiting Payment" ? req.status === "Accepted" : req.status === tab
+    tab === "Awaiting Payment" ? req.status === "Accepted" : req.status === tab,
   );
 
   const openPaymentModal = (request) => {
@@ -288,14 +295,15 @@ const MySendRequestPage = () => {
                     }
                   }}
                   className={`flex-shrink-0 px-4 py-2 cursor-pointer hover:bg-[#E6F0FF] hover:text-black rounded-full transition-all duration-200 font-bold
-       									 ${tab == "Accepted"
-                      ? t == "Awaiting Payment"
-                        ? "bg-[#E6F0FF] text-black"
-                        : ""
-                      : tab === t
-                        ? "bg-[#E6F0FF] text-black"
-                        : "bg-white text-black"
-                    }`}
+       									 ${
+                           tab == "Accepted"
+                             ? t == "Awaiting Payment"
+                               ? "bg-[#E6F0FF] text-black"
+                               : ""
+                             : tab === t
+                               ? "bg-[#E6F0FF] text-black"
+                               : "bg-white text-black"
+                         }`}
                 >
                   {t?.replace("Cancelled", "Cancelled")}
                 </button>
@@ -591,17 +599,17 @@ const MySendRequestPage = () => {
                     {["Pending Pickup", "In Transit", "Delivered"].includes(
                       r.status,
                     ) && (
-                        <div
-                          onClick={() =>
-                            navigate(
-                              `/dashboard/package-track/${r?.tracking_number}`,
-                            )
-                          }
-                          className="bg-[#4681F4] text-white rounded-full px-4 py-1 text-sm font-thin w-fit cursor-pointer hover:bg-blue-600 transition-colors"
-                        >
-                          Track
-                        </div>
-                      )}
+                      <div
+                        onClick={() =>
+                          navigate(
+                            `/dashboard/package-track/${r?.tracking_number}`,
+                          )
+                        }
+                        className="bg-[#4681F4] text-white rounded-full px-4 py-1 text-sm font-thin w-fit cursor-pointer hover:bg-blue-600 transition-colors"
+                      >
+                        Track
+                      </div>
+                    )}
                   </div>
                 </div>
                 {["Pending Pickup"].includes(r.status) && (
