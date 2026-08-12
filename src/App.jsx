@@ -4,7 +4,7 @@ import {
   RouterProvider,
   useLocation,
 } from "react-router-dom";
-import DashboardLayout from "./components/Layout/DashboardLayout";
+import DashboardLayout from "./components/layout/DashboardLayout";
 import Layout from "./components/Layout/Layout";
 import { ProfileProvider } from "./context/ProfileContext";
 import AIAnalyzerSuggester from "./DashboardPages/AIAnalyzerSuggester";
@@ -37,8 +37,8 @@ import IdentityScan from "./pages/ProfileVerficationPages/IdentityScan";
 import PersonalDetails from "./pages/ProfileVerficationPages/PersonalDetails";
 import SignUp from "./pages/SignUp";
 import TermCondition from "./pages/TermCondition";
-import ProtectedRoute from "./Routes/ProtectedRoute";
-import PublicRoute from "./Routes/Publicroute";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
 import BookingRequest from "./DashboardPages/BookingRequest";
 import AddPaymentMethod from "./DashboardPages/AddPaymentMethod";
 import Review from "./pages/ProfileVerficationPages/Review";
@@ -48,7 +48,7 @@ import ResolutionCenterDetails from "./components/Disputes/ResolutionCenterDetai
 import ShipmentDetails from "./DashboardPages/ShipmentDetails";
 import ShipmentTravelDetail from "./DashboardPages/ShipmentTravelDetail";
 import PackageDetailPage from "./DashboardPages/PackageDetailPage";
-import CookieConsentBanner from "./components/Common/CookieConsentBanner";
+import CookieConsentBanner from "./components/common/CookieConsentBanner";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
