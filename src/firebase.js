@@ -16,7 +16,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+let authInstance = null;
+try {
+    authInstance = getAuth(app);
+} catch (error) {
+    console.error("Firebase Auth Error:", error);
+}
+
+export const auth = authInstance;
 
 export const getFirebaseMessaging = async () => {
     const supported = await isSupported();
