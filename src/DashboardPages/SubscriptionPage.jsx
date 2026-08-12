@@ -7,7 +7,7 @@ import {
   SubscriptionDowngradeService,
   SubscriptionSwitchPlanService,
 } from "../api/services/SubscriptionsService/plans";
-import SubscriptionPaymentModal from "../components/dashboard/SubscriptionPaymentModal";
+import SubscriptionPaymentModal from "../components/Dashboard/SubscriptionPaymentModal";
 import VerificationModal from "../components/Dashboard/VerificationModal";
 import { usePopup } from "../context/PopupContext";
 
