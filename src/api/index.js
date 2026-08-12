@@ -34,4 +34,10 @@ API.interceptors.response.use(
   },
 );
 
+if (import.meta.env.VITE_USE_MOCK_API === "true") {
+  import("./mocks/mockAdapter").then(({ initializeMockAdapter }) => {
+    initializeMockAdapter(API);
+  });
+}
+
 export default API;
